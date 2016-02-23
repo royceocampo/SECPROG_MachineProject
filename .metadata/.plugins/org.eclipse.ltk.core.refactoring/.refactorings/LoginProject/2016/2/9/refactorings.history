@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;edu.webprg.servlet&apos; to &apos;edu.secprog.servlet&apos;&#x0D;&#x0A;- Original project: &apos;LoginProject&apos;&#x0D;&#x0A;- Original element: &apos;LoginProject/src/edu.webprg.servlet&apos;&#x0D;&#x0A;- Renamed element: &apos;LoginProject/src/edu.secprog.servlet&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;edu.webprg.servlet&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;edu.webprg.servlet" name="edu.secprog.servlet" qualified="false" references="true" stamp="1456236785359" textual="false" version="1.0"/>
+</session>
