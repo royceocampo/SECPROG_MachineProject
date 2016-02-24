@@ -1,12 +1,15 @@
 package edu.secprog.servlet;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
-import javax.*;
+import javax.resource.spi.ConnectionManager;
 
 public class DbManager {
 	
-	private static Connection conn = ConnectionManager.getInstance().getConnection();
+	private static Connection conn = ConnectionManager[].getInstance().getConnection();
 	public static void Insert(GetsSets set) throws ClassNotFoundException, SQLException{
 		Class.forName("com.mysql.jdbc.Driver");
 		

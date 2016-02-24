@@ -11,6 +11,6 @@
 	<classpathentry exported="true" kind="lib" path="D:/SECPROG_MachineProject/Servers, JARs/apache-tomcat-8.0.20/lib/servlet-api.jar"/>
 	<classpathentry exported="true" kind="lib" path="D:/SECPROG_MachineProject/Servers, JARs/javaee-api-7.0.jar"/>
 	<classpathentry exported="true" kind="lib" path="D:/SECPROG_MachineProject/Servers, JARs/mysql-connector-java-5.1.18-bin.jar"/>
-	<classpathentry exported="true" kind="lib" path="D:/SECPROG_MachineProject/Servers, JARs/javax.resource-3.1.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/SECPROG_MachineProject/Servers, JARs/javax.resource.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

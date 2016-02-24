@@ -2,7 +2,7 @@ package edu.secprog.servlet;
 
 import java.sql.*;
 
-import javax.*;
+import javax.resource.spi.ConnectionManager;
 
 public class DbManager {
 	
