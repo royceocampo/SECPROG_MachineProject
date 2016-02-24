@@ -7,11 +7,11 @@ import java.sql.SQLException;
 public class ConnectionManager {
 	private static ConnectionManager instance = null;
 	
-	private final String USERNAME = "root";
-	private final String PASSWORD = "p@ssword";
-	private final String CONN_STRING = "jdbc:mysql://localhost:3306";
+	 String USERNAME = "root";
+	 String PASSWORD = "p@ssword";
+	 String CONN_STRING = "jdbc:mysql://localhost/foobar_sql";
 	
-	private Connection conn = null;
+	 Connection conn = null;
 	
 	private ConnectionManager(){
 	}
@@ -24,9 +24,15 @@ public class ConnectionManager {
 	}
 	private boolean openConnection(){
 		try {
+			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(CONN_STRING, USERNAME, PASSWORD);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
+			System.out.println("Error: 1");
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			System.out.println("Error: 2");
 			e.printStackTrace();
 		}
 		return true;

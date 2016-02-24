@@ -10,7 +10,7 @@ public class GetsSets {
 	private String password;
 	private String age;
 	private String address;
-	private String skill;
+	
 	private int id;
 	
 	
@@ -62,12 +62,12 @@ public class GetsSets {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public String getSkill() {
-		return skill;
-	}
-	public void setSkill(String skill) {
-		this.skill = skill;
-	}
+//	public String getSkill() {
+//		return skill;
+//	}
+//	public void setSkill(String skill) {
+//		this.skill = skill;
+//	}
 	public int getId() {
 		return id;
 	}

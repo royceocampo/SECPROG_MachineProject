@@ -3,11 +3,13 @@ package edu.secprog.servlet;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class RegServlet
@@ -37,13 +39,18 @@ public class RegServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String hdnParam	=	request.getParameter("pagename");
+		String hdnParam = request.getParameter("pagename");
 		if(hdnParam.equals("login")){
-			String userName	= request.getParameter("txtUserName");
-			String password	= request.getParameter("txtPassword");
+			String userName	= request.getParameter("username");
+			String password	= request.getParameter("password");
 			if((userName.equals("admin")) && (password.equals("admin"))){
-				response.sendRedirect("admin.jsp");
+				HttpSession session = request.getSession();
+				session.setAttribute("username", userName);
+				
+				RequestDispatcher dispatcher = request.getRequestDispatcher("welcome.jsp");
+				dispatcher.forward(request, response);
 			}
+			
 			else{
 				GetsSets set = new GetsSets();
 				set.setEmail(userName);
@@ -52,10 +59,15 @@ public class RegServlet extends HttpServlet {
 					int checkUser = DbManager.checkUser(set);
 					System.out.println(checkUser);
 					if(checkUser == 1){
-						response.sendRedirect("welcome.jsp");
+						HttpSession session = request.getSession();
+						session.setAttribute("username", userName);
+						
+						RequestDispatcher dispatcher = request.getRequestDispatcher("welcome.jsp");
+						dispatcher.forward(request, response);
 					}
 					else{
 						response.sendRedirect("login.jsp");
+						System.out.println("poop????");
 					}
 				}
 				catch (ClassNotFoundException | SQLException e) {

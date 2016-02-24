@@ -8,7 +8,12 @@ public class DbManager {
 	
 	private static Connection conn = ConnectionManager.getInstance().getConnection();
 	public static void Insert(GetsSets set) throws ClassNotFoundException, SQLException{
-		Class.forName("com.mysql.jdbc.Driver");
+		try{
+			Class.forName("com.mysql.jdbc.Driver");
+			System.out.println("Driver found.");
+		}catch(ClassNotFoundException e){
+			System.out.println("Driver not found." +e);
+		}
 		
 		String sql = "INSERT INTO register (fname,lname,gender,state,email,password,age,address,skill) VALUES(?,?,?,?,?,?,?,?,?)";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -20,7 +25,7 @@ public class DbManager {
 		pstmt.setString(6, set.getPassword());
 		pstmt.setString(7, set.getAge());
 		pstmt.setString(8, set.getAddress());
-		pstmt.setString(9, set.getSkill());
+//		pstmt.setString(9, set.getSkill());
 		pstmt.executeUpdate();
 		ConnectionManager.getInstance().close();		
 	}
@@ -28,15 +33,15 @@ public class DbManager {
 	public static int checkUser(GetsSets get) throws ClassNotFoundException, SQLException{
 		Class.forName("com.mysql.jdbc.Driver");
 		
-		String sql	=	"SELECT COUNT(*) FROM register WHERE email=? AND password=?";
+		String sql = "SELECT COUNT(*) FROM register WHERE email=? AND password=?";
 		PreparedStatement pstmt	=	conn.prepareStatement(sql);
 		pstmt.setString(1, get.getEmail());
 		pstmt.setString(2, get.getPassword());
-		ResultSet rs	=	pstmt.executeQuery();
+		ResultSet rs = pstmt.executeQuery();
 		
 		int count = 0;
 		while(rs.next()){
-			count	=	rs.getInt(1);
+			count = rs.getInt(1);
 		}
 		ConnectionManager.getInstance().close();
 		return count;

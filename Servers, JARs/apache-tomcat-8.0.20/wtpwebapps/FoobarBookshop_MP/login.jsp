@@ -26,6 +26,7 @@
 
 	<div class="col-sm-4 col-sm-offset-4" id="loginForm">
 			<form action="login" method="POST" class="form-loginin">
+			<input type="hidden" name="pagename" value="login"/>
 				<br>
 				<label for="inputUsername">Username</label>
 				<input type="text" id="inputUsername" class="form-control" name="username" placeholder="Username" required autofocus>
