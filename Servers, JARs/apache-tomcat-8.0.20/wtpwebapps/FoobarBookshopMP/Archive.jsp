@@ -16,7 +16,7 @@
 		<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 		
-		<title>Borrow Something | Archive</title>
+		<title>Foobar Bookshop | Archive</title>
 		<link rel="shortcut icon" type="image/x-icon" href="Images/favicon.ico" />
 		<link href='http://fonts.googleapis.com/css?family=Carter+One' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
@@ -154,7 +154,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a href="Home.jsp" class="navbar-brand">Borrow Something</a>
+					<a href="Home.jsp" class="navbar-brand">Foobar Bookshop</a>
 				</div>
 				<div class="collapse navbar-collapse" id="example">
 					<form action="" class="navbar-form navbar-left" role="search">

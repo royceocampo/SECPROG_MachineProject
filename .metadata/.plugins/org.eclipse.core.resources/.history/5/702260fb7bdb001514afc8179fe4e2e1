@@ -15,7 +15,7 @@
 		<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 		
-		<title>Foobar Bookshop | Home</title>		
+		<title>Borrow Something | Home</title>		
 		<link rel="shortcut icon" type="image/x-icon" href="Images/favicon.ico" />
 		<link href='http://fonts.googleapis.com/css?family=Carter+One' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
@@ -109,7 +109,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a href="" class="navbar-brand">Foobar Bookshop</a>
+					<a href="" class="navbar-brand">Borrow Something</a>
 				</div>
 				<div class="collapse navbar-collapse" id="example">
 					<form action="" class="navbar-form navbar-left" role="search">
@@ -200,7 +200,7 @@
 		<div class="row" >
 			<div class="col-lg-6">
 				<div class="well">
-					<h1>Foobar Bookshop</h1>
+					<h1>Borrow Something</h1>
 					<p>Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</p>
 				</div>
 			</div>
