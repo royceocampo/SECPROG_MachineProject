@@ -5,6 +5,7 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="D:\SECPROG_MachineProject\FoobarBookshopMP"/>
 			<item value="D:\SECPROG_MP\Borrow-Something-v2-master"/>
 			<item value="D:\SECPROG_MP\A-Tournament"/>
 			<item value="D:\SECPROG_MP\LoginProject"/>
