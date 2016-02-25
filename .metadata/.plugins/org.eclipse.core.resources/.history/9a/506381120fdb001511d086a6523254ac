@@ -1,0 +1,5 @@
+package edu.secprog.db.copy;
+
+public class DBConnection {
+
+}

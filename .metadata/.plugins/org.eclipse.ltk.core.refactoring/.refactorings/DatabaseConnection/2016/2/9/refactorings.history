@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;dbconnectionlib.DCBConnection&apos; to &apos;DBConnection&apos;&#x0D;&#x0A;- Original project: &apos;DatabaseConnection&apos;&#x0D;&#x0A;- Original element: &apos;dbconnectionlib.DCBConnection&apos;&#x0D;&#x0A;- Renamed element: &apos;dbconnectionlib.DBConnection&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;DCBConnection&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;dbconnectionlib{DCBConnection.java[DCBConnection" matchStrategy="1" name="DBConnection" qualified="false" references="true" similarDeclarations="false" stamp="1456318431267" textual="false" version="1.0"/>
+</session>

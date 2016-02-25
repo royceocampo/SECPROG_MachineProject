@@ -2,18 +2,21 @@ package edu.secprog.servlet;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import edu.secprog.services.AccountDetails;
+import edu.secprog.services.AuthenticateUser;
+
 /**
  * Servlet implementation class LoginServlet
  */
-@WebServlet("/loginservlet")
+@WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -40,11 +43,35 @@ public class LoginServlet extends HttpServlet {
 		// save user's input inside a session
 		// direct user to next page
 		String username = request.getParameter("username");
-		HttpSession session = request.getSession();
-		session.setAttribute("username", username);
+		String password = request.getParameter("password");
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("welcome.jsp");
-		dispatcher.forward(request, response);
+		if (AuthenticateUser.checkUser(username, password)){
+			// open a new session
+			HttpSession session = request.getSession();
+			session.setAttribute("username", username);
+			
+			int getID = AccountDetails.getID(username);
+			String accountID = Integer.toString(getID);
+			
+			Cookie c = new Cookie("username", username);
+			c.setMaxAge(60*60*7); // in seconds
+			response.addCookie(c);
+			Cookie id = new Cookie ("id", accountID);
+			request.getRequestDispatcher("welcome.jsp").forward(request, response);
+		}
+		
+		else{
+			request.getRequestDispatcher("loginerror.jsp").forward(request, response);
+		}
+		
+		
+		
+		
+//		HttpSession session = request.getSession();
+//		session.setAttribute("username", username);
+//		
+//		RequestDispatcher dispatcher = request.getRequestDispatcher("welcome.jsp");
+//		dispatcher.forward(request, response);
 		
 	}
 

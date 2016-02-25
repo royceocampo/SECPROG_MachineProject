@@ -1,0 +1,19 @@
+package edu.secprog.services;
+
+import java.sql.*;
+
+import edu.secprog.db.*;
+
+
+public class AuthenticateUser {
+	
+	public static boolean checkuser(String username, String password){
+		boolean checker = false;
+		Connection conn = null;
+	    PreparedStatement ps = null;
+		
+	    
+	    
+	    return checker;
+	}
+}

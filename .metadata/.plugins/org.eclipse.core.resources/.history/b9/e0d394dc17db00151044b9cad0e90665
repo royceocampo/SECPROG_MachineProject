@@ -1,0 +1,10 @@
+package edu.secprog.services;
+
+import java.sql.*;
+
+import edu.secprog.db.*;
+
+
+public class AuthenticateUser {
+
+}

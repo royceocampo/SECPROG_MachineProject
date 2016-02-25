@@ -1,0 +1,5 @@
+package edu.secprog.db;
+
+public class DBConnection {
+
+}

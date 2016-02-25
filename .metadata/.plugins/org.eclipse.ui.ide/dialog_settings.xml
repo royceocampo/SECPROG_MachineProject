@@ -5,6 +5,11 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="D:\SECPROG_MP\A-Tournament"/>
+			<item value="D:\SECPROG_MP\LoginProject"/>
+			<item value="D:\SECPROG_MP\PorkAndBeansProject"/>
+			<item value="D:\SECPROG_MP\DatabaseConnection"/>
+			<item value="F:\Chady&apos;s Files\Documents\AY14-15\3rd Term Files\WEB-PRG\Workspace\PorkAndBeansProject"/>
 			<item value="D:\SECPROG_MachineProject\LoginProject"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">

@@ -1,0 +1,28 @@
+package edu.secprog.services;
+
+import java.sql.*;
+
+import edu.secprog.db.*;
+import edu.webprg.db.DBConnection;
+
+
+public class AuthenticateUser {
+	
+	public static boolean checkuser(String username, String password){
+		boolean checker = false;
+		Connection conn = null;
+	    PreparedStatement ps = null;
+		try{
+			conn = DBConnection.getConnection();
+			ps = conn.prepareStatement ("select * from register where username = ? and password = ?");
+			ps.setString(1, username);
+			ps.setString(2, password);
+			
+			ResultSet rs = ps.executeQuery();
+			
+		}
+	    
+	    
+	    return checker;
+	}
+}

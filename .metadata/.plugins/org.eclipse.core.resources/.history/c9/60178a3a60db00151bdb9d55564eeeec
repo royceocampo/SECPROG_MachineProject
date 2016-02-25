@@ -1,0 +1,5 @@
+package edu.secprog.services;
+
+public class AccountDetails {
+
+}
