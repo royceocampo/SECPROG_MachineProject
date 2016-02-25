@@ -1,3 +1,4 @@
 #Tomcat publish data
-#Thu Feb 25 10:29:51 SGT 2016
+#Thu Feb 25 12:45:06 SGT 2016
 org.eclipse.jst.jee.server\:FoobarBookshop_MP=D\:\\SECPROG_MachineProject\\Servers, JARs\\apache-tomcat-8.0.20\\wtpwebapps\\FoobarBookshop_MP
+org.eclipse.jst.jee.server\:FoobarBookshopMP=D\:\\SECPROG_MachineProject\\Servers, JARs\\apache-tomcat-8.0.20\\wtpwebapps\\FoobarBookshopMP

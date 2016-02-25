@@ -1,0 +1,5 @@
+package boso.dto;
+
+public class Transaction {
+
+}

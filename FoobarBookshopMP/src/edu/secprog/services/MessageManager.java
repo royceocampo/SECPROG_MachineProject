@@ -1,0 +1,61 @@
+package edu.secprog.services;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import edu.secprog.db.DBConnection;
+import edu.secprog.dto.Feedback;
+import edu.secprog.dto.Message;
+
+public class MessageManager {
+	public MessageManager(){}
+	
+	public static void addMessage(Message m){
+		Connection conn = DBConnection.getConnection();
+		String sql = "INSERT INTO MESSAGES (sender, recipient, content, subject) VALUES (?,?,?,?);";
+		
+		try{
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, m.getSender());
+			pstmt.setString(2, m.getRecipient());
+			pstmt.setString(3, m.getContent());
+			pstmt.setString(4, m.getSubject());
+		
+			pstmt.executeUpdate();
+			conn.close();
+			pstmt.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public static ArrayList<Message> getMessage(String username){
+		Connection conn = DBConnection.getConnection();
+		String sql = "SELECT * FROM messages WHERE recipient = ?;";
+		ArrayList<Message> messages = new ArrayList<Message>();
+		
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, username);
+			ResultSet rs = pstmt.executeQuery();
+				while(rs.next()){
+					Message m = new Message();
+					m.setContent(rs.getString("content"));
+					m.setSubject(rs.getString("subject"));
+					m.setSender(rs.getString("sender"));
+					m.setRecipient(rs.getString("recipient"));
+					messages.add(m);
+				}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return messages;
+	}	
+}

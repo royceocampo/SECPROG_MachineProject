@@ -1,0 +1,418 @@
+package Services;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import boso.db.DBConnection;
+import boso.dto.Item;
+import boso.dto.User;
+
+public class ItemManager {
+	public ItemManager(){}
+	
+	public void addItem(Item item){
+		Connection conn = DBConnection.getConnection();
+		String sql = "INSERT INTO ITEMS (itemName, owner, availability, title, author, publicationYear, language, subject, professor, yearTermTaken, brand, type, color, usbSize, description)"
+				+ " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+		
+		String type = item.getType();
+		if(type.equals("book")){
+			try{
+				PreparedStatement pstmt = conn.prepareStatement(sql);
+				
+				pstmt.setString(1, item.getItemName());
+				pstmt.setString(2, item.getOwner());
+				pstmt.setBoolean(3, item.isAvailability());
+				pstmt.setString(4, item.getTitle());
+				pstmt.setString(5, item.getAuthor());
+				pstmt.setInt(6, item.getPubYear());
+				pstmt.setString(7, item.getLanguage());
+				pstmt.setString(8, null);
+				pstmt.setString(9, null);
+				pstmt.setString(10, null);
+				pstmt.setString(11, null);
+				pstmt.setString(12, "book");
+				pstmt.setString(13, null);
+				pstmt.setInt(14, 0);
+				pstmt.setString(15, null);
+			
+				pstmt.executeUpdate();
+				conn.close();
+				pstmt.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		else if(type.equals("calculator")){
+			try{
+				PreparedStatement pstmt = conn.prepareStatement(sql);
+				
+				pstmt.setString(1, item.getItemName());
+				pstmt.setString(2, item.getOwner());
+				pstmt.setBoolean(3, item.isAvailability());
+				pstmt.setString(4, null);
+				pstmt.setString(5, null);
+				pstmt.setInt(6, 0);
+				pstmt.setString(7, null);
+				pstmt.setString(8, null);
+				pstmt.setString(9, null);
+				pstmt.setString(10, null);
+				pstmt.setString(11, item.getBrand());
+				pstmt.setString(12, "calculator");
+				pstmt.setString(13, null);
+				pstmt.setInt(14, 0);
+				pstmt.setString(15, null);
+			
+				pstmt.executeUpdate();
+				conn.close();
+				pstmt.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		else if(type.equals("notebook")){
+			try{
+				PreparedStatement pstmt = conn.prepareStatement(sql);
+				
+				pstmt.setString(1, item.getItemName());
+				pstmt.setString(2, item.getOwner());
+				pstmt.setBoolean(3, item.isAvailability());
+				pstmt.setString(4, null);
+				pstmt.setString(5, null);
+				pstmt.setInt(6, 0);
+				pstmt.setString(7, null);
+				pstmt.setString(8, item.getSubject());
+				pstmt.setString(9, item.getProfessor());
+				pstmt.setString(10, item.getYtt());
+				pstmt.setString(11, null);
+				pstmt.setString(12, "notebook");
+				pstmt.setString(13, null);
+				pstmt.setInt(14, 0);
+				pstmt.setString(15, null);
+			
+				pstmt.executeUpdate();
+				conn.close();
+				pstmt.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		else if(type.equals("other")){
+			try{
+				PreparedStatement pstmt = conn.prepareStatement(sql);
+				
+				pstmt.setString(1, item.getItemName());
+				pstmt.setString(2, item.getOwner());
+				pstmt.setBoolean(3, item.isAvailability());
+				pstmt.setString(4, null);
+				pstmt.setString(5, null);
+				pstmt.setInt(6, 0);
+				pstmt.setString(7, null);
+				pstmt.setString(8, null);
+				pstmt.setString(9, null);
+				pstmt.setString(10, null);
+				pstmt.setString(11, item.getBrand());
+				pstmt.setString(12, "other");
+				pstmt.setString(13, null);
+				pstmt.setInt(14, 0);
+				pstmt.setString(15, item.getDesc());
+			
+				pstmt.executeUpdate();
+				conn.close();
+				pstmt.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		else if(type.equals("supplies")){
+			try{
+				PreparedStatement pstmt = conn.prepareStatement(sql);
+				
+				pstmt.setString(1, item.getItemName());
+				pstmt.setString(2, item.getOwner());
+				pstmt.setBoolean(3, item.isAvailability());
+				pstmt.setString(4, null);
+				pstmt.setString(5, null);
+				pstmt.setInt(6, 0);
+				pstmt.setString(7, null);
+				pstmt.setString(8, null);
+				pstmt.setString(9, null);
+				pstmt.setString(10, null);
+				pstmt.setString(11, item.getBrand());
+				pstmt.setString(12, "supplies");
+				pstmt.setString(13, item.getColor());
+				pstmt.setInt(14, 0);
+				pstmt.setString(15, null);
+			
+				pstmt.executeUpdate();
+				conn.close();
+				pstmt.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		else if(type.equals("umbrella")){
+			try{
+				PreparedStatement pstmt = conn.prepareStatement(sql);
+				
+				pstmt.setString(1, item.getItemName());
+				pstmt.setString(2, item.getOwner());
+				pstmt.setBoolean(3, item.isAvailability());
+				pstmt.setString(4, null);
+				pstmt.setString(5, null);
+				pstmt.setInt(6, 0);
+				pstmt.setString(7, null);
+				pstmt.setString(8, null);
+				pstmt.setString(9, null);
+				pstmt.setString(10, null);
+				pstmt.setString(11, null);
+				pstmt.setString(12, "umbrella");
+				pstmt.setString(13, item.getColor());
+				pstmt.setInt(14, 0);
+				pstmt.setString(15, null);
+			
+				pstmt.executeUpdate();
+				conn.close();
+				pstmt.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		else if(type.equals("usb")){
+			try{
+				PreparedStatement pstmt = conn.prepareStatement(sql);
+				
+				pstmt.setString(1, item.getItemName());
+				pstmt.setString(2, item.getOwner());
+				pstmt.setBoolean(3, item.isAvailability());
+				pstmt.setString(4, null);
+				pstmt.setString(5, null);
+				pstmt.setInt(6, 0);
+				pstmt.setString(7, null);
+				pstmt.setString(8, null);
+				pstmt.setString(9, null);
+				pstmt.setString(10, null);
+				pstmt.setString(11, item.getBrand());
+				pstmt.setString(12, "usb");
+				pstmt.setString(13, null);
+				pstmt.setInt(14, item.getUsbSize());
+				pstmt.setString(15, null);
+			
+				pstmt.executeUpdate();
+				conn.close();
+				pstmt.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+	}
+	
+	public static Item getItem(int id){
+		Connection conn = DBConnection.getConnection();
+		String sql = "SELECT * FROM items WHERE item_id = ?;";
+		Item i = new Item();
+		
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, id);
+			ResultSet rs = pstmt.executeQuery();
+			
+			if(rs.next()){
+				i.setId(rs.getInt("item_id"));
+				i.setItemName(rs.getString("itemName"));
+				i.setOwner(rs.getString("owner"));
+				i.setAvailability(rs.getBoolean("availability"));
+				i.setType(rs.getString("type"));
+			}
+			pstmt.close();
+			rs.close();
+			conn.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return i;
+		
+	}
+	
+	public static ArrayList<Item> getAllItems(String type){
+		Connection conn = DBConnection.getConnection();
+		String sql = "SELECT * FROM items WHERE type = ?;";
+		ArrayList<Item> items = new ArrayList<Item>();
+		
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, type);
+			ResultSet rs = pstmt.executeQuery();
+			
+			if( type.equals("book") ){
+				while(rs.next()){
+					Item item = new Item();
+					item.setId(rs.getInt("item_id"));
+					item.setItemName(rs.getString("itemName"));
+					item.setOwner(rs.getString("owner"));
+					item.setAvailability(rs.getBoolean("availability"));
+					item.setTitle(rs.getString("title"));
+					item.setAuthor(rs.getString("author"));
+					item.setPubYear(rs.getInt("publicationyear"));
+					item.setLanguage(rs.getString("language"));
+					item.setType(rs.getString("type"));
+					items.add(item);
+				}
+			}
+			
+			else if(type.equals("calculator")){
+				while(rs.next()){
+					Item item = new Item();
+					item.setId(rs.getInt("item_id"));
+					item.setItemName(rs.getString("itemName"));
+					item.setOwner(rs.getString("owner"));
+					item.setAvailability(rs.getBoolean("availability"));
+					item.setBrand(rs.getString("brand"));
+					item.setType(rs.getString("type"));
+					items.add(item);
+				}
+			}
+			
+			else if(type.equals("notebook")){
+				while(rs.next()){
+					Item item = new Item();
+					item.setId(rs.getInt("item_id"));
+					item.setItemName(rs.getString("itemName"));
+					item.setOwner(rs.getString("owner"));
+					item.setAvailability(rs.getBoolean("availability"));
+					item.setSubject(rs.getString("subject"));
+					item.setProfessor(rs.getString("professor"));
+					item.setYtt(rs.getString("yearTermTaken"));
+					item.setType(rs.getString("type"));
+					items.add(item);
+				}
+			}
+			
+			else if(type.equals("other")){
+				while(rs.next()){
+					Item item = new Item();
+					item.setId(rs.getInt("item_id"));
+					item.setItemName(rs.getString("itemName"));
+					item.setOwner(rs.getString("owner"));
+					item.setAvailability(rs.getBoolean("availability"));
+					item.setBrand(rs.getString("brand"));
+					item.setDesc(rs.getString("description"));
+					item.setType(rs.getString("type"));
+					items.add(item);
+				}
+			}
+			
+			else if(type.equals("supplies")){
+				while(rs.next()){
+					Item item = new Item();
+					item.setId(rs.getInt("item_id"));
+					item.setItemName(rs.getString("itemName"));
+					item.setOwner(rs.getString("owner"));
+					item.setAvailability(rs.getBoolean("availability"));
+					item.setBrand(rs.getString("brand"));
+					item.setColor(rs.getString("color"));
+					item.setType(rs.getString("type"));
+					items.add(item);
+				}
+			}
+			
+			else if(type.equals("umbrella")){
+				while(rs.next()){
+					Item item = new Item();
+					item.setId(rs.getInt("item_id"));
+					item.setItemName(rs.getString("itemName"));
+					item.setOwner(rs.getString("owner"));
+					item.setAvailability(rs.getBoolean("availability"));
+					item.setColor(rs.getString("color"));
+					item.setType(rs.getString("type"));
+					items.add(item);
+				}
+			}
+			
+			else if(type.equals("usb")){
+				while(rs.next()){
+					Item item = new Item();
+					item.setId(rs.getInt("item_id"));
+					item.setItemName(rs.getString("itemName"));
+					item.setOwner(rs.getString("owner"));
+					item.setAvailability(rs.getBoolean("availability"));
+					item.setBrand(rs.getString("brand"));
+					item.setUsbSize(rs.getInt("size"));
+					item.setType(rs.getString("type"));
+					items.add(item);
+				}
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return items;
+	}
+	
+	public static ArrayList<Item> getUserArchive(String username){
+		Connection conn = DBConnection.getConnection();
+		String sql = "SELECT * FROM items WHERE owner = ?;";
+		ArrayList<Item> items = new ArrayList<Item>();
+		
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, username);
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()){
+				Item item = new Item();
+				item.setId(rs.getInt("item_id"));
+				item.setItemName(rs.getString("itemName"));
+				item.setType(rs.getString("type"));
+				items.add(item);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+		return items;
+	}
+	
+	public static String getOwner(int id){
+		Connection conn = DBConnection.getConnection();
+		String sql = "SELECT * FROM items WHERE item_id = ?;";
+		String username = "";
+		
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, id);
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()){
+				username = rs.getString("owner");
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return username;
+	}
+	
+}

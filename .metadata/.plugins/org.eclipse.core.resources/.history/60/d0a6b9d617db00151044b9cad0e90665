@@ -1,5 +1,0 @@
-package edu.secprog.services;
-
-public class AuthenticateUser {
-
-}
