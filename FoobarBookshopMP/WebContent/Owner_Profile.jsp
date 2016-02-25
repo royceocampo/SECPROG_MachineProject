@@ -16,7 +16,7 @@
 		<meta charset="utf-8"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
-		<title>Borrow Something | Messages</title>
+		<title>Foobar Bookshop | Messages</title>
 		<link rel="shortcut icon" type="image/x-icon" href="Images/favicon.ico" />
 		<link href='http://fonts.googleapis.com/css?family=Carter+One' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
@@ -153,7 +153,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a href="Home.jsp" class="navbar-brand">Borrow Something</a>
+					<a href="Home.jsp" class="navbar-brand">Foobar Bookshop</a>
 				</div>
 				<div class="collapse navbar-collapse" id="example">
 					<form action="" class="navbar-form navbar-left" role="search">

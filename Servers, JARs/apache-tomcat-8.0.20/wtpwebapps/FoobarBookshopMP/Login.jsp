@@ -15,7 +15,7 @@
 		<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 				
-		<title>Borrow Something</title>		
+		<title>Foobar Bookshop</title>		
 		<link rel="shortcut icon" type="image/x-icon" href="Images/favicon.ico" />
 		<link href='http://fonts.googleapis.com/css?family=Carter+One' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
@@ -77,7 +77,7 @@
 	<body>
 		<div class="container-fluid" id="main">
 			<div class="container" id="sitename">
-				Borrow Something
+				Foobar Bookshop
 			</div>
 			<div class="col-sm-6 col-sm-offset-3" id="info">
 				<ul class="nav nav-pills nav-justified">

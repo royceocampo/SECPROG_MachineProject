@@ -5,9 +5,6 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<meta charset="utf-8"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
 		<!-- Bootstrap: Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
@@ -16,7 +13,10 @@
 		<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 		
-		<title>Foobar Bookshop | My Profile</title>
+		<meta charset="utf-8"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<title>Borrow Something | Messages</title>
 		<link rel="shortcut icon" type="image/x-icon" href="Images/favicon.ico" />
 		<link href='http://fonts.googleapis.com/css?family=Carter+One' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
@@ -138,6 +138,10 @@
 			width: 200px;
 			height: 200px;
 		}
+		
+		.col-lg-2 col-lg-offset-2 {
+			text-align: left;
+		}
 		</style>
 	</head>
 	<body>
@@ -149,7 +153,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a href="Home.jsp" class="navbar-brand">Foobar Bookshop</a>
+					<a href="Home.jsp" class="navbar-brand">Borrow Something</a>
 				</div>
 				<div class="collapse navbar-collapse" id="example">
 					<form action="" class="navbar-form navbar-left" role="search">
@@ -176,9 +180,9 @@
 		</div>
 		
 		<div class="container">
-			<div class="col-lg-4">
+			<div class="col-lg-2">
 				<img src="Images/addphoto.png" /><br>
-				<h3>${user.firstname} ${user.lastname} <br>
+				<h3>${owner.firstname} ${owner.lastname} <br>
 				<div class="acidjs-rating-stars acidjs-rating-disabled">
 					<form>
 						<input disabled="disabled" type="radio" name="group-3" id="group-3-0" value="5" /><label for="group-3-0"></label><!--
@@ -188,10 +192,15 @@
 						--><input disabled="disabled" type="radio" name="group-3" id="group-3-4"  value="1" /><label for="group-3-4"></label>
 					</form>
 				</div><br>
-				${user.college} ${user.idnum}<br>
-				${user.gender}<br>
-				${user.email}
+				${owner.college} ${owner.idnum}<br>
+				${owner.gender}<br>
+				${owner.email}
 				</h3>
+				<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalComposeFeed">Leave Feedback</button>
+				<br><br>
+				<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalComposeMsg">Contact Owner</button>
+			</div>
+			<div class="col-lg-2">
 			</div>
 			<div class="col-lg-8">
 				<h4>Feedbacks</h4>
@@ -205,6 +214,62 @@
 			</div>			
 		</div>
 		
+	<div class="modal fade" id="modalComposeFeed">
+      <div class="modal-dialog">
+        <div class="modal-content">
+        <form action="FeedbackServlet" method="POST">
+	          <div class="modal-header">
+	            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	            <h4 class="modal-title">Leave Feedback</h4>
+	          </div>
+	          <div class="modal-body">
+	            	<div>
+	            		<label class="col-sm-12" for="inputBody">Feedback</label>
+	                  <div class="col-sm-12">
+	                  	<input type="number" name="rating" placeholder="Rate from 1 to 5" />
+	                  	<textarea class="form-control" id="inputBody" rows="17" name="msg"></textarea>
+	                  </div>
+	            	</div>
+	          </div>
+	          <input type="hidden" id="ownerName" name="ownerName" value="${owner.username}"></input>
+	          <div class="modal-footer">
+					<input class="btn btn-lg btn-primary btn-block" type="submit" value="Send" />
+	          </div>
+          </form>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal compose message -->
+	<div class="modal fade" id="modalComposeMsg">
+      <div class="modal-dialog">
+        <div class="modal-content">
+        <form action="MessageServlet" method="POST">
+	          <div class="modal-header">
+	            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	            <h4 class="modal-title">Compose Message</h4>
+			  </div>
+			  <div class="modal-body">
+				
+					<div class="form-group">
+					  <label class="col-sm-2" for="inputSubject">Subject</label>
+					  <div class="col-sm-10"><input type="text" class="form-control" id="inputSubject" placeholder="subject" name="subject"></div>
+					</div>
+					<div class="form-group">
+					  <label class="col-sm-12" for="inputBody">Message</label>
+					  <div class="col-sm-12"><textarea class="form-control" id="inputBody" rows="18" name="content"></textarea></div>
+					</div>
+			
+			  </div>
+			  <input type="hidden" id="ownerName" name="ownerName" value="${owner.username}"></input>
+			  <div class="modal-footer">
+			  	<br>
+				<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancel</button> 
+				<input class="btn btn-lg btn-primary btn-block" type="submit" value="Send" />
+				
+			  </div>
+          </form>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal compose message -->	
 		<footer>
 			<div class="container">
 				<hr><p>

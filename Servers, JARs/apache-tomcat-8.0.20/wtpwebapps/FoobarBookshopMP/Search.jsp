@@ -14,14 +14,14 @@
 		<meta charset="utf-8"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
-		<title>Borrow Something | Search</title>
+		<title>Foobar Bookshop | Search</title>
 		<link rel="shortcut icon" type="image/x-icon" href="Images/favicon.ico" />
 		<link href='http://fonts.googleapis.com/css?family=Carter+One' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Kite+One' rel='stylesheet' type='text/css'>
 		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">	
 	
-		<title>Borrow Something | Search</title>
+		<title>Foobar Bookshop | Search</title>
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 		
 		<style>
@@ -202,7 +202,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a href="Home.html" class="navbar-brand">Borrow Something</a>
+					<a href="Home.html" class="navbar-brand">Foobar Bookshop</a>
 				</div>
 				<div class="collapse navbar-collapse" id="example">
 					<form action="" class="navbar-form navbar-left" role="search">
