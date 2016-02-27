@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import edu.secprog.services.UserManager;
+//import java.security.MessageDigest;
+//import java.math.*
 
 /**
  * Servlet implementation class LoginServlet
@@ -43,6 +45,18 @@ public class LoginServlet extends HttpServlet {
 		// get the inputs of the user
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
+		
+		//hashing<not sure pls check
+		/*MessageDigest m = MessageDigest.getInstance("MD5");
+		m.reset();
+		m.update(password.getBytes());
+		byte[] digest = m.digest();
+		BigInteger bigInt = new BigInteger(1,digest);
+		String hashtext = bigInt.toString(16);
+		while(hashtext.length() < 32 ){
+		  hashtext = "0"+hashtext;
+		}
+		password = hashtext;*/
 				
 		// verify if the username and password matches
 		if(new UserManager().verifyUser(username, password)){		
