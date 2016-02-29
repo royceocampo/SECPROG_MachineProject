@@ -1,6 +1,6 @@
 package edu.secprog.dto;
 
-public class User {
+/*public class User {
 	private String username;
 	private String firstname;
 	private String lastname;
@@ -88,4 +88,43 @@ public class User {
 		this.idnum = idnum;
 	}
 	
+}*/
+
+	public class Account {
+		private String username;
+		private String password;
+		private Boolean status;
+
+	public Account(){}
+	
+	public Account(String username, String password, Boolean status {
+		super();
+		this.username = username;
+		this.password = password;
+		this.status = status;
+	}
+	
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	public Boolean getStatus() {
+		return status;
+	}
+
+	public void setStatus(Boolean status) {
+		this.status = status;
+	}
 }
