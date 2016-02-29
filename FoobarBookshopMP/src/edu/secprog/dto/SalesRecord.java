@@ -45,14 +45,13 @@ public class SalesRecord {
 	}
 	
 	private String getDateTime() {
-    DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-    Date date = new Date();
-    return dateFormat.format(date);
-  }
+	    	DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+	    	return dateFormat.format(transactiondate);
+  	}
   
-  private Date getDateTime() {
-    return transactiondate;
-  }
+	private Date getDateTime() {
+    		return transactiondate;
+  	}
   
 	public void setDate(Date date){
 		this.date = date;
