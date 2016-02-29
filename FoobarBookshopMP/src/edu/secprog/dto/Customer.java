@@ -61,4 +61,44 @@ public class Customer extends Account {
 	public void setEmail(String email){
 		this.email = email;
 	}
+	
+	public Address getBillingAddress() {
+		return billingaddress;
+	}
+	
+	public void setBillingAddress(Address billingaddress){
+		this.billingaddress = billingaddress;
+	}
+	
+	public Address getDeliveryAddress() {
+		return deliveryaddress;
+	}
+	
+	public void setDeliveryAddress(Address deliveryaddress){
+		this.deliveryaddress = deliveryaddress;
+	}
+	
+	public String getCardName() {
+		return cardname;
+	}
+	
+	public void setCardName(String cardname){
+		this.cardname = cardname;
+	}
+	
+	public int getCardNumber() {
+		return cardnumber;
+	}
+	
+	public void setCardNumber(int cardnumber){
+		this.cardnumber = cardnumber;
+	}
+	
+	public String getCardType() {
+		return cardtype;
+	}
+	
+	public void setCardType(String cardtype){
+		this.cardtype = cardtype;
+	}
 }
