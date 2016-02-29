@@ -49,11 +49,11 @@ public class SalesRecord {
 	    	return dateFormat.format(transactiondate);
   	}
   
-	private Date getDateTime() {
+	private Date getTransactionDate() {
     		return transactiondate;
   	}
   
-	public void setDate(Date transactiondate){
+	public void setTransactionDate(Date transactiondate){
 		this.transactiondate = transactiondate;
 	}
 }
