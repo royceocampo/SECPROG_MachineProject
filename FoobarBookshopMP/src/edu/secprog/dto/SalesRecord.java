@@ -53,7 +53,7 @@ public class SalesRecord {
     		return transactiondate;
   	}
   
-	public void setDate(Date date){
-		this.date = date;
+	public void setDate(Date transactiondate){
+		this.transactiondate = transactiondate;
 	}
 }
