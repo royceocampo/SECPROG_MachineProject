@@ -12,6 +12,8 @@ import javax.servlet.http.HttpSession;
 
 import edu.secprog.dto.User;
 import edu.secprog.services.UserManager;
+//import java.security.MessageDigest;
+//import java.math.*
 
 /**
  * Servlet implementation class SignupServlet
@@ -52,7 +54,20 @@ public class SignupServlet extends HttpServlet {
 			int byear = bday.get(Calendar.YEAR);
 		Date birthday = new Date (byear, bmonth, bdate);*/
 		String email = request.getParameter("email");
+		
 		String password = request.getParameter("password");
+		//hashing<not sure pls check
+		/*MessageDigest m = MessageDigest.getInstance("MD5");
+		m.reset();
+		m.update(password.getBytes());
+		byte[] digest = m.digest();
+		BigInteger bigInt = new BigInteger(1,digest);
+		String hashtext = bigInt.toString(16);
+		while(hashtext.length() < 32 ){
+		  hashtext = "0"+hashtext;
+		}
+		password = hashtext;*/
+		
 		String college = request.getParameter("colleges");
 		int idnum = Integer.parseInt(request.getParameter("idNum"));
 		
