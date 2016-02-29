@@ -101,4 +101,17 @@ public class Customer extends Account {
 	public void setCardType(String cardtype){
 		this.cardtype = cardtype;
 	}
+	
+	private String getDateTime() {
+	    	DateFormat dateFormat = new SimpleDateFormat("yyyy/MM");
+	    	return dateFormat.format(cardexpiry);
+  	}
+  
+	private Date getCardExpiryDate() {
+    		return cardexpiry;
+  	}
+  
+	public void setCardExpiryDate(Date cardexpiry){
+		this.cardexpiry = cardexpiry;
+	}
 }
