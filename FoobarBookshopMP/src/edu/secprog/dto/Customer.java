@@ -18,14 +18,47 @@ public class Customer extends Account {
 	public Customer(String firstname, String lastname, String middleinitial, String email, 
 	  Address billingaddress, Address deliveryaddress, String cardname, int cardnumber, String cardtype, Date cardexpiry){
 	  
-		this.itemName = name;
-		this.owner = owner;
-		this.availability = availability;
-		this.title = title;
-		this.author = author;
-		this.pubYear = year;
-		this.language = language;
-		this.type = type;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.middleinitial = middleinitial;
+		this.email = email;
+		this.billingaddress = billingaddress;
+		this.deliveryaddress = deliveryaddress;
+		this.cardname = cardname;
+		this.cardnumber = cardnumber
+		this.cardtype = cardtype;
+		this.cardexpiry = cardexpiry;
 	}
 	
+	public String getFirstName() {
+		return firstname;
+	}
+	
+	public void setFirstName(String firstname){
+		this.firstname = firstname;
+	}
+	
+	public String getLastName() {
+		return lastname;
+	}
+	
+	public void setLastName(String lastname){
+		this.lastname = lastname;
+	}
+	
+	public String getMiddleInitial() {
+		return middleinitial;
+	}
+	
+	public void setMiddleInitial(String middleinitial){
+		this.middleinitial = middleinitial;
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+	
+	public void setEmail(String email){
+		this.email = email;
+	}
 }
