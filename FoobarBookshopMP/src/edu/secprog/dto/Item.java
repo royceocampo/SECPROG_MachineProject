@@ -1,6 +1,6 @@
 package edu.secprog.dto;
 
-public class Item {
+/*public class Item {
 	private String itemName;
 	private String owner;
 	private boolean availability;
@@ -221,4 +221,45 @@ public class Item {
 	
 	
 	
+}*/
+
+public class Product {
+	private String title;
+	private String summary;
+	private float price;
+	
+	public Product(){}
+	
+	//for book
+	public Product(String title, String summary, float price){
+		this.title = title;
+		this.summary = summary;
+		this.price = price;
+	}
+	
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	
+	public String getSummary() {
+		return summary;
+	}
+
+	public void setSummary(String summary) {
+		this.summary = summary;
+	}
+	
+	public float getPrice(){
+		return price;
+	}
+	
+	public void setPrice(float price){
+		this.price = price;
+	}
 }
+	}
+	}
