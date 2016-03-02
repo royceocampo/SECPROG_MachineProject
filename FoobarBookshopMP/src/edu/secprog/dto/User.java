@@ -97,7 +97,7 @@ package edu.secprog.dto;
 
 	public Account(){}
 	
-	public Account(String username, String password, Boolean status {
+	public Account(String username, String password, Boolean status) {
 		super();
 		this.username = username;
 		this.password = password;
