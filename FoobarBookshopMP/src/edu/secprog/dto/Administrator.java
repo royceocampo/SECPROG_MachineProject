@@ -5,7 +5,7 @@ public class Administrator extends Account {
 	private String password;
 	
 	
-	public Administratorr(){}
+	public Administrator(){}
 	
 	public Administrator(String username, String password){
 	  
