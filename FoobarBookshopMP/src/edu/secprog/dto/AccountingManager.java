@@ -6,7 +6,7 @@ public class AccountingManager extends Account {
 	
 	public AccountingManager(){}
 	
-	public AccountingManager(String type, String temppass){
+	public AccountingManager(String temppass){
 	  
 		this.temppass = temppass;
 	}
