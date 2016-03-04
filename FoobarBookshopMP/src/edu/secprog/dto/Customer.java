@@ -115,4 +115,11 @@ public class Customer extends Account {
 		this.cardexpiry = cardexpiry;
 	}
 	
+	public void PurchaseProduct(Product product){
+		
+	}
+	
+	public void SearchProduct(Product product){
+		
+	}
 }
